@@ -22,11 +22,11 @@ function Home() {
       <br></br>
       <Link to={`${match.url}/linkRelative`}>Link Relative</Link>
 
-      {/* <Switch>
+      <Switch>
         <Route path={`${match.url}/linkRelative`}>
           <h2>Estoy en /home/linkRelative 2</h2>
         </Route>
-      </Switch> */}
+      </Switch>
     </div>
   );
 };
@@ -36,9 +36,9 @@ const Root = (
   <Router>
     <NavBar />
     <Switch>
-      <Route path="/home/linkRelative">
+      {/* <Route path="/home/linkRelative">
         <h2>Estoy en /home/linkRelative</h2>
-      </Route>
+      </Route> */}
       <Route path="/home">
         <Home />
       </Route>

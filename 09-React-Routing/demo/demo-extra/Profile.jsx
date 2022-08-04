@@ -17,19 +17,19 @@ export default function Profile() {
   return (
     <form onSubmit={onProfileSubmit}>
       {/* <Prompt message="Are you sure you want to leave?" /> */}
-      {/* <Prompt
+      <Prompt
         when={isBlocked}
         message={location =>
           `Are you sure you want to go to ${location.pathname}`
         }
-      /> */}
-      <Prompt
+      />
+      {/* <Prompt
         message={location => 
           location.pathname.startsWith("/new")
             ? true
             : `Are you sure you want to go to ${location.pathname}`
         }
-      />
+      /> */}
       <h2>Profile ID: {id}</h2>
       <input placeholder="Name" onChange={onInputChange} />
       <input type="submit" value="SAVE" />

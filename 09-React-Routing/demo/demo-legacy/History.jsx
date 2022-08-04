@@ -4,6 +4,8 @@ export default function History({ history }) {
   const [number, setNumber] = useState(0);
   const [text, setText] = useState('');
 
+  console.log(history)
+
   function goBack() {
     history.goBack();
   }

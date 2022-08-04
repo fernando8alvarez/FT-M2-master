@@ -50,12 +50,12 @@ const Root = (
         path="/component"
         component={Home}
       />
-      {/* <Route
+      <Route
         path="/render/:paramOne"
         render={({ match }) => (
-          <Other match={match} Ejemplo />
+          <Other match={match} Ejemplo ='algo'/>
         )}
-      /> */}
+      />
       <Route
         path="/render/:paramOne"
         render={(props) => (
