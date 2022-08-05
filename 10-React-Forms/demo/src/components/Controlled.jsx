@@ -16,7 +16,8 @@ export default function Form() {
       <form>
         <input className={error && 'danger'}
           name="username" value={username} placeholder="username" onChange={(e) => validateUser(e.target.value)}/>
-        {!error ? null : <span>{error}</span>}
+        {/* {!error ? null : <span>{error}</span>} */}
+        {error && <span>{error}</span>}
         <input name="password" value={password} placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
         <input type="submit" />
       </form>

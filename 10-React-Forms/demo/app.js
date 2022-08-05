@@ -6,6 +6,6 @@ import Ejemplo from './src/components/Ejemplo.jsx';
 import DynamicInputs from './src/components/DynamicInputs.jsx';
 
 render(<div>
-    <h2>Ejemplo</h2>
-    <Ejemplo lang='hun'/>
+    <h2>Formaulario y key</h2>
+    <DynamicInputs/>
   </div>, document.getElementById('app'));

@@ -4,17 +4,17 @@ function Ejemplo({lang}) {
   if (lang === 'hun') {
     return (
       <form>
-        <input key="lastName" type="text" placeholder="Vezetéknév" name="lastName"/>
-        <input key="firstName" type="text" placeholder="Keresztnév" name="firstName"/>
-        <input key="middleInitial" type="text" placeholder="KB" style={{width: 30}} name="middleInitial"/> 
+        <input  type="text" placeholder="Vezetéknév" name="lastName"/>
+        <input  type="text" placeholder="Keresztnév" name="firstName"/>
+        <input  type="text" placeholder="KB" style={{width: 30}} name="middleInitial"/> 
       </form>
       )
   }
   return (
       <form>
-        <input key="firstName" type="text" placeholder="First Name" name="firstName"/> 
-        <input key="middleInitial" type="text" placeholder="MI" style={{width: 30}} name="middleInitial"/> 
-        <input key="lastName" type="text" placeholder="Last Name" name="lastName"/> 
+        <input  type="text" placeholder="First Name" name="firstName"/> 
+        <input  type="text" placeholder="MI" style={{width: 30}} name="middleInitial"/> 
+        <input  type="text" placeholder="Last Name" name="lastName"/> 
       </form>
     );
 }

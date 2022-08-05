@@ -13,12 +13,14 @@ function DinamicInputs() {
   });
 
   const agregaFamiliar = () => {
-      setFamiliar([...familiar, { ...modeloFamiliar }]);
+    var obj = persona;//{nombre: 'Fernando'}
+      setFamiliar([...familiar, obj]);//[{ nombre: '' },{ nombre: 'Fernando' }]
+      setPersona((state) => state = {nombre: ''});
   };
 
   const handlePersonaChange = (e) => setPersona({
     ...persona,
-    [e.target.name]: e.target.value,
+    [e.target.name]: e.target.value,//{ nombre: 'lo que escribieron' }
   });
 
   const handleFamiliarChange = (e) => {
