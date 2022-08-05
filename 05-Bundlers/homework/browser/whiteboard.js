@@ -1,6 +1,9 @@
-(function () {
+//(function () {
 
-  window.whiteboard = new window.EventEmitter();
+  //window.whiteboard = new window.EventEmitter();
+  let constructorEE = require('./event-emitter');//Importamos la funcion constructora EventEmitter
+  let whiteboard = new constructorEE();
+
 
   // Ultimately, the color of our stroke;
   var color;
@@ -113,4 +116,6 @@
 
   };
 
-})();
+  module.exports = whiteboard;//exportamos whiteboard que es una instancia de la funcion constructora EventEmitter
+
+//})();

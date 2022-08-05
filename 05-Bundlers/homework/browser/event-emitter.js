@@ -1,46 +1,48 @@
-(function () {
+//(function () {
 
-  window.EventEmitter = EventEmitter;
+  //window.EventEmitter = EventEmitter;
 
-  // our EventEmitter constructor function
+  // Nuestra función constructora EventEmitter
   function EventEmitter () {
     this.subscribers = {};
   }
 
-  // To be used like:
+  // Para ser utilizado como:
   // instanceOfEE.on('touchdown', cheerFn);
   EventEmitter.prototype.on = function (eventName, eventListener) {
 
-    // If this instance's subscribers object does not yet
-    // have the key matching the given event name, create the
-    // key and assign the value of an empty array.
+    // Si el objeto subscribers de esta instancia
+    // la key que coincida con el nombre del evento dado, create the
+    // cree la key y asignale el valor de una matriz vacía
     if (!this.subscribers[eventName]) {
         this.subscribers[eventName] = [];
     }
 
-    // Push the given listener function into the array
-    // located on the instance's subscribers object.
+    // Inserte la función listener dada en la matriz
+    // ubicada en la instancia del objeto subscribers.
     this.subscribers[eventName].push(eventListener);
 
   };
 
-  // To be used like:
+  // Para ser utilizado com:
   // instanceOfEE.emit('codec', 'Hey Snake, Otacon is calling!');
   EventEmitter.prototype.emit = function (eventName) {
 
-    // If there are no subscribers to this event name, why even?
+    // Si no hay subscribers a este eventName, ¿por qué?
     if (!this.subscribers[eventName]) {
         return;
     }
-
-    // Grab the remaining arguments to our emit function.
+     // Tome los remaining arguments para nuestra función de emisión
     var remainingArgs = [].slice.call(arguments, 1);
 
-    // For each subscriber, call it with our arguments.
+    // Para cada subscribers, llámalo con nuestros argumentos.
     this.subscribers[eventName].forEach(function (listener) {
         listener.apply(null, remainingArgs);
     });
 
   };
 
-})();
+
+  module.exports = EventEmitter;//Exportamos la funcion constructora EventEmitter
+
+//})();
