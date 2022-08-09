@@ -1,0 +1,22 @@
+
+.barraB{
+    background-color: #f9f5eb;
+    border-radius: 5px;
+    width: 300px;
+    border: none;
+    height: 30px;
+}
+.btn{
+    background-color: rgba(255, 0, 0, 0.811);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    height: 30px;
+    width: 100px;
+}
+.btn2:hover{
+    color: white;
+    background-color: rgb(181, 73, 73);
+    border: none;
+}

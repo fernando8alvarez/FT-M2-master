@@ -1,0 +1,57 @@
+.btn{
+    background-color: rgba(255, 0, 0, 0.811);/*color de fondo*/
+    width: 25px;
+    height: min-content;
+    border-radius: 3px;/*Borde de lascajas*/
+    /*align-self: flex-end;*/
+    border: none;/*quitar borde*/
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.btn2{
+    color: white;/*color de texto*/
+}
+
+.btn3:hover{
+    color: white;
+    background-color: rgb(181, 73, 73);
+  
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 250px;
+    align-content: center;
+    border: 5px solid rgba(0, 0, 0, 0.693);
+    border-radius: 5px;
+    position: relative;
+    background-color: #f9f5eb;
+}
+
+.city{
+    margin-top: 20px;
+}
+
+.img{
+    background-color: gray;
+    border-radius: 5px;
+    border-style:dashed;
+    border-color: rgba(0, 0, 0, 0.909);
+}
+h6{
+    font-weight: 750;
+}

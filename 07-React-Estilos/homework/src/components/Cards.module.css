@@ -1,0 +1,5 @@
+.cards{
+    display: flex;
+    justify-content: space-evenly;/*pone un espacio espacio igual entre elementos e incluyendo el borde*/
+    flex-wrap: wrap;/*en el responsive se apilan unos sobre otros*/
+}
