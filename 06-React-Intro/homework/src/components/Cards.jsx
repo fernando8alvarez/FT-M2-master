@@ -5,7 +5,7 @@ export default function Cards({ cities }) {
   // acá va tu código
   // tip, podés usar un map
 
-  //cities = [Londres, Cairns, Denver]; ---> viene de app que asu vez viene de data
+  //cities = [Londres, Cairns, Denver]; ---> viene de app que a su vez viene de data
   return (
     <div>{cities.map((city) => {
       return <Card
