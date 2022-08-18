@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import store from '../store.js';
-import * as actionsCreators from '../actions';
-import { bindActionCreators } from 'redux';
+//import store from '../store.js';
+//import * as actionsCreators from '../actions';
+import {increment, decrement, reset, fetchPost} from '../actions';
+//import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchPost } from '../actions/index.js';
+//import { fetchPost } from '../actions/index.js';
 import axios from 'axios';
-
 
 const Counter = ({ counter, increment, decrement, reset, fetchPost}) => (
       <p>
@@ -36,4 +36,5 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionsCreators, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+//export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, {increment, decrement, reset, fetchPost})(Counter);
