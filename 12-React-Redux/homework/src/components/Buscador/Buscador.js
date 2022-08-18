@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+import { addMovieFavorite, getMovies } from '../../actions/index.js'
 import './Buscador.css';
 
 
@@ -11,12 +12,17 @@ export class Buscador extends Component {
     this.state = {
       title: ""
     };
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(event) {
     this.setState({ title: event.target.value });
   }
+
   handleSubmit(event) {
     event.preventDefault();
+    this.props.getMovies(this.state.title)
   }
 
   render() {
@@ -38,11 +44,29 @@ export class Buscador extends Component {
           <button type="submit">BUSCAR</button>
         </form>
         <ul>
-         {/* Aqui tienes que escribir tu codigo para mostrar la lista de peliculas */}
+         {this.props.movies?.map(movie => { return <div key={movie.imdbID}>
+          <Link to={`/movie/${movie.imdbID}`}>
+            <li>{movie.Title}</li>
+          </Link>
+          <button onClick={()=> this.props.addMovieFavorite({title: movie.Title, id: movie.imdbID})}>agregar a favoritos</button>
+         </div>})}
         </ul>
       </div>
     );
   }
 }
 
-export default Buscador;
+function mapStateToProps(state) {//toma el estado redux
+  return {
+    movies: state.moviesLoaded//envia esta propiedad al componente
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),//envia este despacho al componente como prop
+    getMovies: title => dispatch(getMovies(title))//envia este despacho al componente como prop
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Buscador);
